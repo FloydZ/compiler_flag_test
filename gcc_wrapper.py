@@ -359,8 +359,8 @@ def main():
     run(args.target, args.path, baseflags, flags, parse)
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
 
 # rebuild("example_c", "test", "-O3")
 # get_gcc_optimizer_flags_descriptions()
@@ -369,4 +369,4 @@ if __name__ == "__main__":
 #     "--param=max-pipeline-region-blocks=1"], test_parse)
 
 # print(get_gcc_optimizer_flags())
-# print(get_gcc_diffs(3))
+print(get_gcc_diffs(3))
