@@ -4,7 +4,6 @@ from typing import Callable
 import os
 import re
 import argparse
-import pprint
 
 GCC_BIN = "/usr/bin/g++"
 
@@ -111,7 +110,6 @@ GCC_O2_FLAGS = [
                 "-fvect-cost-model=very-cheap"
 ]
 
-
 GCC_O3_FLAGS = [
                 "-fgcse-after-reload",
                 "-fipa-cp-clone",
@@ -130,6 +128,7 @@ GCC_O3_FLAGS = [
 
 GCC_FLAGS = [GCC_O1_FLAGS, GCC_O2_FLAGS, GCC_O3_FLAGS]
 
+
 def power_set(s):
     """
     yields a power set
@@ -144,7 +143,7 @@ def power_set(s):
 
 def rebuild(target: str, dir: str, optimisations: str, CFLAGS=""):
     """
-    rebuild either a 'Make' or 'CMake' project
+    rebuild either a 'Make' project
     """
 
     # first clear the target
@@ -359,14 +358,5 @@ def main():
     run(args.target, args.path, baseflags, flags, parse)
 
 
-#if __name__ == "__main__":
-#    main()
-
-# rebuild("example_c", "test", "-O3")
-# get_gcc_optimizer_flags_descriptions()
-# run("example_c", "test", "-O2",
-#    ["--param=selsched-max-lookahead=1",
-#     "--param=max-pipeline-region-blocks=1"], test_parse)
-
-# print(get_gcc_optimizer_flags())
-print(get_gcc_diffs(3))
+if __name__ == "__main__":
+    main()
