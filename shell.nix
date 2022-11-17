@@ -2,8 +2,6 @@
 let
   my-python = pkgs.python3;
   python-with-my-packages = my-python.withPackages (p: with p; [
-    pandas
-   	matplotlib 
   ]);
 in
 pkgs.mkShell {
