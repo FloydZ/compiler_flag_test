@@ -89,12 +89,12 @@ def get_opt_optimisations_passes():
     """
     lines = execute_command("--help-hidden", OPT_BIN)
 
-    found = False:
+    found = False
     for i, line in enumerate(lines):
         if "Optimizations available" in line:
-            found = True:
+            found = True
 
         if found:
-            split = 
+            split = ""
 # print(get_clang_flags())
 print(get_opt_flags())
